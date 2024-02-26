@@ -1,0 +1,32 @@
+module Level_to_Pulse (
+    input wire clk,       // Clock de entrada
+    input wire level_in,  // Sinal de nível de entrada
+    output pulse_out  // Saída do pulso
+);
+
+// Definição de parâmetros
+parameter PULSE_WIDTH = 5;  // Largura do pulso em ciclos de clock
+
+// Declaração de variáveis internas
+reg [3:0] counter;  // Contador para controlar a duração do pulso
+
+// Processo always @ (posedge clk)
+always @(posedge clk) begin
+    // Se o sinal de entrada estiver alto
+    if (level_in == 1) begin
+        // Incrementar o contador até alcançar a largura desejada do pulso
+        if (counter < PULSE_WIDTH) begin
+            counter <= counter + 1;
+            pulse_out <= 1;  // Saída do pulso é alta
+        end else begin
+            counter <= 0;
+            pulse_out <= 0;  // Reiniciar a saída do pulso
+        end
+    end else begin
+        // Se o sinal de entrada estiver baixo
+        counter <= 0;
+        pulse_out <= 0;  // Reiniciar a saída do pulso
+    end
+end
+
+endmodule

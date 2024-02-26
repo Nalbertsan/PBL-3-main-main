@@ -1,0 +1,129 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'div_clock:divisor|count[14]'
+Slack : -10.155
+TNS   : -70.249
+
+Type  : Setup 'clk'
+Slack : -3.973
+TNS   : -52.241
+
+Type  : Setup 'PG'
+Slack : -1.902
+TNS   : -12.287
+
+Type  : Setup 'modulo_display:modulo_display|contador_4bit_asc_lim12:contador_duzia|count[0]'
+Slack : -1.811
+TNS   : -5.230
+
+Type  : Setup 'modulo_display:modulo_display|contador_4bit_asc_lim9:cont_unidade_gar|count[0]'
+Slack : -1.808
+TNS   : -6.837
+
+Type  : Setup 'modulo_display:modulo_display|contador_4bit_desc_lim5:cont_unidade_rolha|count[0]'
+Slack : -1.775
+TNS   : -8.252
+
+Type  : Setup 'maq_desp:comb_9|current_state.Ligado'
+Slack : -1.738
+TNS   : -4.540
+
+Type  : Hold 'PG'
+Slack : -6.264
+TNS   : -46.030
+
+Type  : Hold 'modulo_display:modulo_display|contador_4bit_desc_lim5:cont_unidade_rolha|count[0]'
+Slack : -5.686
+TNS   : -17.034
+
+Type  : Hold 'modulo_display:modulo_display|contador_4bit_asc_lim12:contador_duzia|count[0]'
+Slack : -2.301
+TNS   : -8.535
+
+Type  : Hold 'div_clock:divisor|count[14]'
+Slack : -2.231
+TNS   : -3.831
+
+Type  : Hold 'clk'
+Slack : -1.607
+TNS   : -1.607
+
+Type  : Hold 'modulo_display:modulo_display|contador_4bit_asc_lim9:cont_unidade_gar|count[0]'
+Slack : 1.682
+TNS   : 0.000
+
+Type  : Hold 'maq_desp:comb_9|current_state.Ligado'
+Slack : 1.739
+TNS   : 0.000
+
+Type  : Recovery 'div_clock:divisor|count[14]'
+Slack : -5.184
+TNS   : -15.552
+
+Type  : Recovery 'modulo_display:modulo_display|contador_4bit_asc_lim9:cont_unidade_gar|count[0]'
+Slack : -5.011
+TNS   : -20.044
+
+Type  : Recovery 'modulo_display:modulo_display|contador_4bit_asc_lim12:contador_duzia|count[0]'
+Slack : -4.198
+TNS   : -16.792
+
+Type  : Recovery 'PG'
+Slack : -1.543
+TNS   : -6.172
+
+Type  : Recovery 'modulo_display:modulo_display|contador_4bit_desc_lim5:cont_unidade_rolha|count[0]'
+Slack : 1.065
+TNS   : 0.000
+
+Type  : Removal 'modulo_display:modulo_display|contador_4bit_desc_lim5:cont_unidade_rolha|count[0]'
+Slack : -5.815
+TNS   : -19.683
+
+Type  : Removal 'PG'
+Slack : -5.688
+TNS   : -22.752
+
+Type  : Removal 'modulo_display:modulo_display|contador_4bit_asc_lim12:contador_duzia|count[0]'
+Slack : 3.572
+TNS   : 0.000
+
+Type  : Removal 'modulo_display:modulo_display|contador_4bit_asc_lim9:cont_unidade_gar|count[0]'
+Slack : 4.385
+TNS   : 0.000
+
+Type  : Removal 'div_clock:divisor|count[14]'
+Slack : 4.558
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'PG'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'div_clock:divisor|count[14]'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'maq_desp:comb_9|current_state.Ligado'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'modulo_display:modulo_display|contador_4bit_asc_lim12:contador_duzia|count[0]'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'modulo_display:modulo_display|contador_4bit_asc_lim9:cont_unidade_gar|count[0]'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'modulo_display:modulo_display|contador_4bit_desc_lim5:cont_unidade_rolha|count[0]'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

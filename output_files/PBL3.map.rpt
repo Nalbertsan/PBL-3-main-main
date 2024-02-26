@@ -1,0 +1,611 @@
+Analysis & Synthesis report for PBL3
+Sun Feb 25 23:25:08 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |PBL3|maq_desp:comb_9|current_state
+  9. State Machine - |PBL3|maq_enc_veda:comb_8|current_state
+ 10. State Machine - |PBL3|maq_esteira:comb_7|next_state
+ 11. State Machine - |PBL3|maq_esteira:comb_7|current_state
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: maq_esteira:comb_7
+ 17. Parameter Settings for User Entity Instance: maq_enc_veda:comb_8
+ 18. Parameter Settings for User Entity Instance: maq_desp:comb_9
+ 19. Port Connectivity Checks: "maq_enc_veda:comb_8"
+ 20. Port Connectivity Checks: "maq_esteira:comb_7"
+ 21. Port Connectivity Checks: "modulo_display:modulo_display|contador_2bit_asc:cont_dig_7seg"
+ 22. Port Connectivity Checks: "debouncer:debouncer3"
+ 23. Port Connectivity Checks: "debouncer:debouncer2"
+ 24. Port Connectivity Checks: "debouncer:debouncer1"
+ 25. Port Connectivity Checks: "debouncer:debouncer0"
+ 26. Port Connectivity Checks: "div_clock:divisor"
+ 27. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sun Feb 25 23:25:08 2024       ;
+; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name               ; PBL3                                        ;
+; Top-level Entity Name       ; PBL3                                        ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 117                                         ;
+; Total pins                  ; 31                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EPM240T100C5       ;                    ;
+; Top-level entity name                                            ; PBL3               ; PBL3               ;
+; Family name                                                      ; MAX II             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                            ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------------------+---------+
+; PBL3.v                           ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v                    ;         ;
+; d_ff.v                           ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/d_ff.v                    ;         ;
+; MUX_4_1.v                        ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/MUX_4_1.v                 ;         ;
+; decod_2_4.v                      ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/decod_2_4.v               ;         ;
+; modulo_display.v                 ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v          ;         ;
+; contador_2bit_desc_lim2.v        ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_2bit_desc_lim2.v ;         ;
+; contador_4bit_desc_lim5.v        ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_4bit_desc_lim5.v ;         ;
+; contador_3bit_padrao.v           ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_3bit_padrao.v    ;         ;
+; decod_numeros_7seg_0a9.v         ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/decod_numeros_7seg_0a9.v  ;         ;
+; decod_numeros_7seg_0a3.v         ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/decod_numeros_7seg_0a3.v  ;         ;
+; contador_4bit_asc_lim9.v         ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_4bit_asc_lim9.v  ;         ;
+; contador_2bit_asc.v              ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_2bit_asc.v       ;         ;
+; div_clock.v                      ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/div_clock.v               ;         ;
+; debouncer.v                      ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/debouncer.v               ;         ;
+; maq_esteira.v                    ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/maq_esteira.v             ;         ;
+; maq_enc_veda.v                   ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/maq_enc_veda.v            ;         ;
+; maq_desp.v                       ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/maq_desp.v                ;         ;
+; contador_4bit_asc_lim12.v        ; yes             ; User Verilog HDL File  ; C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_4bit_asc_lim12.v ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                               ;
++---------------------------------------------+-----------------------------+
+; Resource                                    ; Usage                       ;
++---------------------------------------------+-----------------------------+
+; Total logic elements                        ; 117                         ;
+;     -- Combinational with no register       ; 61                          ;
+;     -- Register only                        ; 9                           ;
+;     -- Combinational with a register        ; 47                          ;
+;                                             ;                             ;
+; Logic element usage by number of LUT inputs ;                             ;
+;     -- 4 input functions                    ; 62                          ;
+;     -- 3 input functions                    ; 11                          ;
+;     -- 2 input functions                    ; 27                          ;
+;     -- 1 input functions                    ; 8                           ;
+;     -- 0 input functions                    ; 0                           ;
+;                                             ;                             ;
+; Logic elements by mode                      ;                             ;
+;     -- normal mode                          ; 103                         ;
+;     -- arithmetic mode                      ; 14                          ;
+;     -- qfbk mode                            ; 0                           ;
+;     -- register cascade mode                ; 0                           ;
+;     -- synchronous clear/load mode          ; 0                           ;
+;     -- asynchronous clear/load mode         ; 21                          ;
+;                                             ;                             ;
+; Total registers                             ; 56                          ;
+; Total logic cells in carry chains           ; 15                          ;
+; I/O pins                                    ; 31                          ;
+; Maximum fan-out node                        ; div_clock:divisor|count[14] ;
+; Maximum fan-out                             ; 21                          ;
+; Total fan-out                               ; 447                         ;
+; Average fan-out                             ; 3.02                        ;
++---------------------------------------------+-----------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                               ;
++----------------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------+-------------------------+--------------+
+; Compilation Hierarchy Node                         ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                            ; Entity Name             ; Library Name ;
++----------------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------+-------------------------+--------------+
+; |PBL3                                              ; 117 (4)     ; 56           ; 0          ; 31   ; 0            ; 61 (4)       ; 9 (0)             ; 47 (0)           ; 15 (0)          ; 0 (0)      ; |PBL3                                                                          ; PBL3                    ; work         ;
+;    |debouncer:debouncer0|                          ; 4 (1)       ; 3            ; 0          ; 0    ; 0            ; 1 (1)        ; 2 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |PBL3|debouncer:debouncer0                                                     ; debouncer               ; work         ;
+;       |d_ff:d0|                                    ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |PBL3|debouncer:debouncer0|d_ff:d0                                             ; d_ff                    ; work         ;
+;       |d_ff:d1|                                    ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PBL3|debouncer:debouncer0|d_ff:d1                                             ; d_ff                    ; work         ;
+;       |d_ff:d2|                                    ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PBL3|debouncer:debouncer0|d_ff:d2                                             ; d_ff                    ; work         ;
+;    |debouncer:debouncer1|                          ; 3 (0)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 2 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |PBL3|debouncer:debouncer1                                                     ; debouncer               ; work         ;
+;       |d_ff:d0|                                    ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |PBL3|debouncer:debouncer1|d_ff:d0                                             ; d_ff                    ; work         ;
+;       |d_ff:d1|                                    ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PBL3|debouncer:debouncer1|d_ff:d1                                             ; d_ff                    ; work         ;
+;       |d_ff:d2|                                    ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PBL3|debouncer:debouncer1|d_ff:d2                                             ; d_ff                    ; work         ;
+;    |debouncer:debouncer2|                          ; 4 (1)       ; 3            ; 0          ; 0    ; 0            ; 1 (1)        ; 3 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PBL3|debouncer:debouncer2                                                     ; debouncer               ; work         ;
+;       |d_ff:d0|                                    ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PBL3|debouncer:debouncer2|d_ff:d0                                             ; d_ff                    ; work         ;
+;       |d_ff:d1|                                    ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PBL3|debouncer:debouncer2|d_ff:d1                                             ; d_ff                    ; work         ;
+;       |d_ff:d2|                                    ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PBL3|debouncer:debouncer2|d_ff:d2                                             ; d_ff                    ; work         ;
+;    |div_clock:divisor|                             ; 15 (15)     ; 15           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 15 (15)          ; 15 (15)         ; 0 (0)      ; |PBL3|div_clock:divisor                                                        ; div_clock               ; work         ;
+;    |maq_desp:comb_9|                               ; 4 (4)       ; 3            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |PBL3|maq_desp:comb_9                                                          ; maq_desp                ; work         ;
+;    |maq_enc_veda:comb_8|                           ; 7 (7)       ; 4            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |PBL3|maq_enc_veda:comb_8                                                      ; maq_enc_veda            ; work         ;
+;    |maq_esteira:comb_7|                            ; 3 (3)       ; 2            ; 0          ; 0    ; 0            ; 1 (1)        ; 1 (1)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |PBL3|maq_esteira:comb_7                                                       ; maq_esteira             ; work         ;
+;    |modulo_display:modulo_display|                 ; 73 (8)      ; 23           ; 0          ; 0    ; 0            ; 50 (8)       ; 1 (0)             ; 22 (0)           ; 0 (0)           ; 0 (0)      ; |PBL3|modulo_display:modulo_display                                            ; modulo_display          ; work         ;
+;       |MUX_4_1:mux_4_1_7seg|                       ; 17 (17)     ; 0            ; 0          ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PBL3|modulo_display:modulo_display|MUX_4_1:mux_4_1_7seg                       ; MUX_4_1                 ; work         ;
+;       |contador_2bit_asc:cont_dig_7seg|            ; 2 (2)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |PBL3|modulo_display:modulo_display|contador_2bit_asc:cont_dig_7seg            ; contador_2bit_asc       ; work         ;
+;       |contador_2bit_desc_lim2:cont_dezena_rolha|  ; 2 (2)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |PBL3|modulo_display:modulo_display|contador_2bit_desc_lim2:cont_dezena_rolha  ; contador_2bit_desc_lim2 ; work         ;
+;       |contador_3bit_padrao:recargas_disponiveis|  ; 3 (3)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |PBL3|modulo_display:modulo_display|contador_3bit_padrao:recargas_disponiveis  ; contador_3bit_padrao    ; work         ;
+;       |contador_4bit_asc_lim12:contador_duzia|     ; 4 (4)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |PBL3|modulo_display:modulo_display|contador_4bit_asc_lim12:contador_duzia     ; contador_4bit_asc_lim12 ; work         ;
+;       |contador_4bit_asc_lim9:cont_dezena_gar|     ; 4 (4)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |PBL3|modulo_display:modulo_display|contador_4bit_asc_lim9:cont_dezena_gar     ; contador_4bit_asc_lim9  ; work         ;
+;       |contador_4bit_asc_lim9:cont_unidade_gar|    ; 4 (4)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |PBL3|modulo_display:modulo_display|contador_4bit_asc_lim9:cont_unidade_gar    ; contador_4bit_asc_lim9  ; work         ;
+;       |contador_4bit_desc_lim5:cont_unidade_rolha| ; 4 (4)       ; 4            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |PBL3|modulo_display:modulo_display|contador_4bit_desc_lim5:cont_unidade_rolha ; contador_4bit_desc_lim5 ; work         ;
+;       |decod_2_4:decod_dig_7seg|                   ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PBL3|modulo_display:modulo_display|decod_2_4:decod_dig_7seg                   ; decod_2_4               ; work         ;
+;       |decod_numeros_7seg_0a3:decod_dezena_r|      ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PBL3|modulo_display:modulo_display|decod_numeros_7seg_0a3:decod_dezena_r      ; decod_numeros_7seg_0a3  ; work         ;
+;       |decod_numeros_7seg_0a9:decod_dezena_gar|    ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PBL3|modulo_display:modulo_display|decod_numeros_7seg_0a9:decod_dezena_gar    ; decod_numeros_7seg_0a9  ; work         ;
+;       |decod_numeros_7seg_0a9:decod_unidade_gar|   ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PBL3|modulo_display:modulo_display|decod_numeros_7seg_0a9:decod_unidade_gar   ; decod_numeros_7seg_0a9  ; work         ;
+;       |decod_numeros_7seg_0a9:decod_unidade_r|     ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PBL3|modulo_display:modulo_display|decod_numeros_7seg_0a9:decod_unidade_r     ; decod_numeros_7seg_0a9  ; work         ;
++----------------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------+-------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------+
+; State Machine - |PBL3|maq_desp:comb_9|current_state                                             ;
++-------------------------+-------------------------+----------------------+----------------------+
+; Name                    ; current_state.Desligado ; current_state.Alarme ; current_state.Ligado ;
++-------------------------+-------------------------+----------------------+----------------------+
+; current_state.Desligado ; 0                       ; 0                    ; 0                    ;
+; current_state.Ligado    ; 1                       ; 0                    ; 1                    ;
+; current_state.Alarme    ; 1                       ; 1                    ; 0                    ;
++-------------------------+-------------------------+----------------------+----------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |PBL3|maq_enc_veda:comb_8|current_state                                                                                                         ;
++------------------------------------+------------------------------------+-----------------------------+-----------------------------+---------------------------+
+; Name                               ; current_state.GARRAFA_CHEIA_VEDADA ; current_state.GARRAFA_CHEIA ; current_state.GARRAFA_VAZIA ; current_state.SEM_GARRAFA ;
++------------------------------------+------------------------------------+-----------------------------+-----------------------------+---------------------------+
+; current_state.SEM_GARRAFA          ; 0                                  ; 0                           ; 0                           ; 0                         ;
+; current_state.GARRAFA_VAZIA        ; 0                                  ; 0                           ; 1                           ; 1                         ;
+; current_state.GARRAFA_CHEIA        ; 0                                  ; 1                           ; 0                           ; 1                         ;
+; current_state.GARRAFA_CHEIA_VEDADA ; 1                                  ; 0                           ; 0                           ; 1                         ;
++------------------------------------+------------------------------------+-----------------------------+-----------------------------+---------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------+
+; State Machine - |PBL3|maq_esteira:comb_7|next_state ;
++--------------------+--------------------------------+
+; Name               ; next_state.MOVING              ;
++--------------------+--------------------------------+
+; next_state.STOPPED ; 0                              ;
+; next_state.MOVING  ; 1                              ;
++--------------------+--------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------+
+; State Machine - |PBL3|maq_esteira:comb_7|current_state ;
++-----------------------+--------------------------------+
+; Name                  ; current_state.MOVING           ;
++-----------------------+--------------------------------+
+; current_state.STOPPED ; 0                              ;
+; current_state.MOVING  ; 1                              ;
++-----------------------+--------------------------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; maq_enc_veda:comb_8|current_state~4   ; Lost fanout        ;
+; maq_enc_veda:comb_8|current_state~5   ; Lost fanout        ;
+; maq_enc_veda:comb_8|current_state~6   ; Lost fanout        ;
+; maq_esteira:comb_7|next_state~3       ; Lost fanout        ;
+; maq_esteira:comb_7|current_state~5    ; Lost fanout        ;
+; Total Number of Removed Registers = 5 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 56    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 21    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                ;
++-----------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                 ; Fan out ;
++-----------------------------------------------------------------------------------+---------+
+; modulo_display:modulo_display|contador_2bit_desc_lim2:cont_dezena_rolha|count[1]  ; 5       ;
+; modulo_display:modulo_display|contador_4bit_desc_lim5:cont_unidade_rolha|count[2] ; 13      ;
+; modulo_display:modulo_display|contador_4bit_desc_lim5:cont_unidade_rolha|count[0] ; 13      ;
+; Total number of inverted registers = 3                                            ;         ;
++-----------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |PBL3|modulo_display:modulo_display|MUX_4_1:mux_4_1_7seg|Mux0 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: maq_esteira:comb_7 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; STOPPED        ; 00    ; Unsigned Binary                        ;
+; MOVING         ; 01    ; Unsigned Binary                        ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: maq_enc_veda:comb_8 ;
++----------------------+-------+-----------------------------------+
+; Parameter Name       ; Value ; Type                              ;
++----------------------+-------+-----------------------------------+
+; SEM_GARRAFA          ; 000   ; Unsigned Binary                   ;
+; GARRAFA_VAZIA        ; 001   ; Unsigned Binary                   ;
+; GARRAFA_CHEIA        ; 010   ; Unsigned Binary                   ;
+; GARRAFA_CHEIA_VEDADA ; 011   ; Unsigned Binary                   ;
++----------------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: maq_desp:comb_9 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; Alarme         ; 10    ; Unsigned Binary                     ;
+; Desligado      ; 00    ; Unsigned Binary                     ;
+; Ligado         ; 01    ; Unsigned Binary                     ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "maq_enc_veda:comb_8"                                                                                                                                                                    ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                                                                                            ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; reset     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; EV        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "maq_esteira:comb_7"                                                                                                                                                                    ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; reset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "modulo_display:modulo_display|contador_2bit_asc:cont_dig_7seg"                                                                                                                         ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; reset     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "debouncer:debouncer3"                                                                                                                                                                  ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                            ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; out      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "debouncer:debouncer2"                                                                                                                                                                 ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                                                            ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "debouncer:debouncer1"                                                                                                                                                                 ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                                                            ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "debouncer:debouncer0"                                                                                                                                                                 ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                                                            ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; rstn     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rstn[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "div_clock:divisor"                                                                                                                                                                         ;
++--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                                                                                            ;
++--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; reset        ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; count[13..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sun Feb 25 23:25:00 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PBL3 -c PBL3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file pbl3.v
+    Info (12023): Found entity 1: PBL3 File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file d_ff.v
+    Info (12023): Found entity 1: d_ff File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/d_ff.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decod_numeros_7seg.v
+    Info (12023): Found entity 1: decod_numeros_7seg File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/decod_numeros_7seg.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_4_1.v
+    Info (12023): Found entity 1: MUX_4_1 File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/MUX_4_1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file contador_sin_2bit.v
+    Info (12023): Found entity 1: contador_sin_2bit File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_sin_2bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decod_2_4.v
+    Info (12023): Found entity 1: decod_2_4 File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/decod_2_4.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file modulo_display.v
+    Info (12023): Found entity 1: modulo_display File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file contador_2bit_desc_lim2.v
+    Info (12023): Found entity 1: contador_2bit_desc_lim2 File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_2bit_desc_lim2.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file contador_4bit_desc_lim5.v
+    Info (12023): Found entity 1: contador_4bit_desc_lim5 File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_4bit_desc_lim5.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file contador_3bit_padrao.v
+    Info (12023): Found entity 1: contador_3bit_padrao File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_3bit_padrao.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decod_numeros_7seg_0a9.v
+    Info (12023): Found entity 1: decod_numeros_7seg_0a9 File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/decod_numeros_7seg_0a9.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decod_numeros_7seg_0a3.v
+    Info (12023): Found entity 1: decod_numeros_7seg_0a3 File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/decod_numeros_7seg_0a3.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file contador_4bit_asc_lim9.v
+    Info (12023): Found entity 1: contador_4bit_asc_lim9 File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_4bit_asc_lim9.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file contador_2bit_asc.v
+    Info (12023): Found entity 1: contador_2bit_asc File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_2bit_asc.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file div_clock.v
+    Info (12023): Found entity 1: div_clock File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/div_clock.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file debouncer.v
+    Info (12023): Found entity 1: debouncer File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/debouncer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file maq_esteira.v
+    Info (12023): Found entity 1: maq_esteira File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/maq_esteira.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file maq_enc_veda.v
+    Info (12023): Found entity 1: maq_enc_veda File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/maq_enc_veda.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file maq_desp.v
+    Info (12023): Found entity 1: maq_desp File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/maq_desp.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file contador_4bit_asc_lim12.v
+    Info (12023): Found entity 1: contador_4bit_asc_lim12 File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_4bit_asc_lim12.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at PBL3.v(35): created implicit net for "B0_inv" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 35
+Warning (10236): Verilog HDL Implicit Net warning at PBL3.v(36): created implicit net for "B1_inv" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 36
+Warning (10236): Verilog HDL Implicit Net warning at PBL3.v(40): created implicit net for "RO_pre" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 40
+Warning (10236): Verilog HDL Implicit Net warning at PBL3.v(45): created implicit net for "C" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 45
+Warning (10236): Verilog HDL Implicit Net warning at PBL3.v(45): created implicit net for "RC" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 45
+Warning (10236): Verilog HDL Implicit Net warning at PBL3.v(45): created implicit net for "RD" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 45
+Warning (10236): Verilog HDL Implicit Net warning at PBL3.v(50): created implicit net for "AL" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 50
+Warning (10236): Verilog HDL Implicit Net warning at modulo_display.v(17): created implicit net for "CH1" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 17
+Warning (10236): Verilog HDL Implicit Net warning at modulo_display.v(21): created implicit net for "pode_diminuir" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at modulo_display.v(25): created implicit net for "teste_uni_rol" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 25
+Warning (10236): Verilog HDL Implicit Net warning at modulo_display.v(28): created implicit net for "unidade_completa_r" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 28
+Warning (10236): Verilog HDL Implicit Net warning at modulo_display.v(33): created implicit net for "teste_deze_rol" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 33
+Warning (10236): Verilog HDL Implicit Net warning at modulo_display.v(46): created implicit net for "duzia_c" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 46
+Warning (10236): Verilog HDL Implicit Net warning at modulo_display.v(48): created implicit net for "teste_uni_gar" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 48
+Warning (10236): Verilog HDL Implicit Net warning at modulo_display.v(49): created implicit net for "unidade_completa_g" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 49
+Warning (10236): Verilog HDL Implicit Net warning at modulo_display.v(51): created implicit net for "teste_deze_gar" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 51
+Critical Warning (10846): Verilog HDL Instantiation warning at PBL3.v(48): instance has no name File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 48
+Critical Warning (10846): Verilog HDL Instantiation warning at PBL3.v(49): instance has no name File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 49
+Critical Warning (10846): Verilog HDL Instantiation warning at PBL3.v(50): instance has no name File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 50
+Info (12127): Elaborating entity "PBL3" for the top level hierarchy
+Warning (10034): Output port "LED0" at PBL3.v(19) has no driver File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 19
+Warning (10034): Output port "LED1" at PBL3.v(19) has no driver File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 19
+Warning (10034): Output port "LED2" at PBL3.v(19) has no driver File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 19
+Warning (10034): Output port "LED3" at PBL3.v(19) has no driver File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 19
+Info (12128): Elaborating entity "div_clock" for hierarchy "div_clock:divisor" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 32
+Warning (10230): Verilog HDL assignment warning at div_clock.v(24): truncated value with size 32 to match size of target (15) File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/div_clock.v Line: 24
+Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:debouncer0" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 39
+Info (12128): Elaborating entity "d_ff" for hierarchy "debouncer:debouncer0|d_ff:d0" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/debouncer.v Line: 11
+Info (12128): Elaborating entity "modulo_display" for hierarchy "modulo_display:modulo_display" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 45
+Warning (10036): Verilog HDL or VHDL warning at modulo_display.v(25): object "teste_uni_rol" assigned a value but never read File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 25
+Warning (10036): Verilog HDL or VHDL warning at modulo_display.v(33): object "teste_deze_rol" assigned a value but never read File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 33
+Warning (10036): Verilog HDL or VHDL warning at modulo_display.v(48): object "teste_uni_gar" assigned a value but never read File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 48
+Warning (10036): Verilog HDL or VHDL warning at modulo_display.v(51): object "teste_deze_gar" assigned a value but never read File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 51
+Warning (10230): Verilog HDL assignment warning at modulo_display.v(25): truncated value with size 4 to match size of target (1) File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 25
+Warning (10230): Verilog HDL assignment warning at modulo_display.v(33): truncated value with size 2 to match size of target (1) File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 33
+Warning (10230): Verilog HDL assignment warning at modulo_display.v(48): truncated value with size 4 to match size of target (1) File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 48
+Warning (10230): Verilog HDL assignment warning at modulo_display.v(51): truncated value with size 4 to match size of target (1) File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 51
+Info (12128): Elaborating entity "contador_3bit_padrao" for hierarchy "modulo_display:modulo_display|contador_3bit_padrao:recargas_disponiveis" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 17
+Warning (10230): Verilog HDL assignment warning at contador_3bit_padrao.v(13): truncated value with size 32 to match size of target (3) File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_3bit_padrao.v Line: 13
+Info (12128): Elaborating entity "contador_4bit_desc_lim5" for hierarchy "modulo_display:modulo_display|contador_4bit_desc_lim5:cont_unidade_rolha" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 24
+Warning (10230): Verilog HDL assignment warning at contador_4bit_desc_lim5.v(24): truncated value with size 32 to match size of target (4) File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_4bit_desc_lim5.v Line: 24
+Info (12128): Elaborating entity "contador_2bit_desc_lim2" for hierarchy "modulo_display:modulo_display|contador_2bit_desc_lim2:cont_dezena_rolha" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 32
+Warning (10230): Verilog HDL assignment warning at contador_2bit_desc_lim2.v(24): truncated value with size 32 to match size of target (2) File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_2bit_desc_lim2.v Line: 24
+Info (12128): Elaborating entity "decod_numeros_7seg_0a9" for hierarchy "modulo_display:modulo_display|decod_numeros_7seg_0a9:decod_unidade_r" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 37
+Info (12128): Elaborating entity "decod_numeros_7seg_0a3" for hierarchy "modulo_display:modulo_display|decod_numeros_7seg_0a3:decod_dezena_r" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 41
+Warning (10034): Output port "sB" at decod_numeros_7seg_0a3.v(3) has no driver File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/decod_numeros_7seg_0a3.v Line: 3
+Info (12128): Elaborating entity "contador_4bit_asc_lim12" for hierarchy "modulo_display:modulo_display|contador_4bit_asc_lim12:contador_duzia" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 45
+Warning (10230): Verilog HDL assignment warning at contador_4bit_asc_lim12.v(24): truncated value with size 32 to match size of target (4) File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_4bit_asc_lim12.v Line: 24
+Info (12128): Elaborating entity "contador_4bit_asc_lim9" for hierarchy "modulo_display:modulo_display|contador_4bit_asc_lim9:cont_unidade_gar" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 47
+Warning (10230): Verilog HDL assignment warning at contador_4bit_asc_lim9.v(24): truncated value with size 32 to match size of target (4) File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_4bit_asc_lim9.v Line: 24
+Info (12128): Elaborating entity "contador_2bit_asc" for hierarchy "modulo_display:modulo_display|contador_2bit_asc:cont_dig_7seg" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 61
+Warning (10230): Verilog HDL assignment warning at contador_2bit_asc.v(24): truncated value with size 32 to match size of target (2) File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_2bit_asc.v Line: 24
+Info (12128): Elaborating entity "decod_2_4" for hierarchy "modulo_display:modulo_display|decod_2_4:decod_dig_7seg" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 65
+Info (12128): Elaborating entity "MUX_4_1" for hierarchy "modulo_display:modulo_display|MUX_4_1:mux_4_1_7seg" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/modulo_display.v Line: 72
+Info (12128): Elaborating entity "maq_esteira" for hierarchy "maq_esteira:comb_7" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 48
+Info (12128): Elaborating entity "maq_enc_veda" for hierarchy "maq_enc_veda:comb_8" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 49
+Warning (10230): Verilog HDL assignment warning at maq_enc_veda.v(76): truncated value with size 32 to match size of target (1) File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/maq_enc_veda.v Line: 76
+Warning (10230): Verilog HDL assignment warning at maq_enc_veda.v(77): truncated value with size 32 to match size of target (1) File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/maq_enc_veda.v Line: 77
+Warning (10230): Verilog HDL assignment warning at maq_enc_veda.v(78): truncated value with size 32 to match size of target (1) File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/maq_enc_veda.v Line: 78
+Info (12128): Elaborating entity "maq_desp" for hierarchy "maq_desp:comb_9" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 50
+Warning (12241): 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LED0" is stuck at GND File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 19
+    Warning (13410): Pin "LED1" is stuck at GND File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 19
+    Warning (13410): Pin "LED2" is stuck at GND File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 19
+    Warning (13410): Pin "LED3" is stuck at GND File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 19
+Info (18000): Registers with preset signals will power-up high File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/contador_2bit_desc_lim2.v Line: 15
+Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CH0" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 15
+    Warning (15610): No output dependent on input pin "CH1" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 15
+    Warning (15610): No output dependent on input pin "CH2" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 15
+    Warning (15610): No output dependent on input pin "reset" File: C:/Users/nalbe/Downloads/PBL-3-main-main-20240226T013737Z-001/PBL-3-main-main/PBL3.v Line: 3
+Info (21057): Implemented 148 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 22 output pins
+    Info (21061): Implemented 117 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 54 warnings
+    Info: Peak virtual memory: 4705 megabytes
+    Info: Processing ended: Sun Feb 25 23:25:08 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:10
+
+

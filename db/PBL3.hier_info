@@ -1,0 +1,542 @@
+|PBL3
+CH0 => ~NO_FANOUT~
+CH1 => ~NO_FANOUT~
+CH2 => ~NO_FANOUT~
+clk => clk.IN1
+OUT_7SEG[0] << modulo_display:modulo_display.port5
+OUT_7SEG[1] << modulo_display:modulo_display.port5
+OUT_7SEG[2] << modulo_display:modulo_display.port5
+OUT_7SEG[3] << modulo_display:modulo_display.port5
+OUT_7SEG[4] << modulo_display:modulo_display.port5
+OUT_7SEG[5] << modulo_display:modulo_display.port5
+OUT_7SEG[6] << modulo_display:modulo_display.port5
+dig0 << modulo_display:modulo_display.port6
+dig1 << modulo_display:modulo_display.port7
+dig2 << modulo_display:modulo_display.port8
+dig3 << modulo_display:modulo_display.port9
+reset => ~NO_FANOUT~
+LED_RGB << maq_desp:comb_9.port5
+PG => PG.IN3
+ST => ST.IN1
+B0 => B0_inv.IN1
+B1 => B1_inv.IN1
+LED0 << <GND>
+LED1 << <GND>
+LED2 << <GND>
+LED3 << <GND>
+LED4 << VE.DB_MAX_OUTPUT_PORT_TYPE
+LED5 << GARRAFA_CHEIA_VEDADA.DB_MAX_OUTPUT_PORT_TYPE
+LED6 << GARRAFA_CHEIA.DB_MAX_OUTPUT_PORT_TYPE
+LED7 << GARRAFA_VAZIA.DB_MAX_OUTPUT_PORT_TYPE
+LED8 << SEM_GARRAFA.DB_MAX_OUTPUT_PORT_TYPE
+LED9 << maq_esteira:comb_7.port4
+
+
+|PBL3|div_clock:divisor
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count[2]~reg0.CLK
+clk => count[3]~reg0.CLK
+clk => count[4]~reg0.CLK
+clk => count[5]~reg0.CLK
+clk => count[6]~reg0.CLK
+clk => count[7]~reg0.CLK
+clk => count[8]~reg0.CLK
+clk => count[9]~reg0.CLK
+clk => count[10]~reg0.CLK
+clk => count[11]~reg0.CLK
+clk => count[12]~reg0.CLK
+clk => count[13]~reg0.CLK
+clk => count[14]~reg0.CLK
+reset => count[0]~reg0.ACLR
+reset => count[1]~reg0.ACLR
+reset => count[2]~reg0.ACLR
+reset => count[3]~reg0.ACLR
+reset => count[4]~reg0.ACLR
+reset => count[5]~reg0.ACLR
+reset => count[6]~reg0.ACLR
+reset => count[7]~reg0.ACLR
+reset => count[8]~reg0.ACLR
+reset => count[9]~reg0.ACLR
+reset => count[10]~reg0.ACLR
+reset => count[11]~reg0.ACLR
+reset => count[12]~reg0.ACLR
+reset => count[13]~reg0.ACLR
+reset => count[14]~reg0.ACLR
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[4] <= count[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[5] <= count[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[6] <= count[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[7] <= count[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[8] <= count[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[9] <= count[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[10] <= count[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[11] <= count[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[12] <= count[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[13] <= count[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[14] <= count[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|debouncer:debouncer0
+B => B.IN1
+clk => clk.IN3
+rstn => rstn.IN3
+out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|debouncer:debouncer0|d_ff:d0
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|debouncer:debouncer0|d_ff:d1
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|debouncer:debouncer0|d_ff:d2
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|debouncer:debouncer1
+B => B.IN1
+clk => clk.IN3
+rstn => rstn.IN3
+out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|debouncer:debouncer1|d_ff:d0
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|debouncer:debouncer1|d_ff:d1
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|debouncer:debouncer1|d_ff:d2
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|debouncer:debouncer2
+B => B.IN1
+clk => clk.IN3
+rstn => rstn.IN3
+out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|debouncer:debouncer2|d_ff:d0
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|debouncer:debouncer2|d_ff:d1
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|debouncer:debouncer2|d_ff:d2
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|debouncer:debouncer3
+B => B.IN1
+clk => clk.IN3
+rstn => rstn.IN3
+out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|debouncer:debouncer3|d_ff:d0
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|debouncer:debouncer3|d_ff:d1
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|debouncer:debouncer3|d_ff:d2
+d => q~reg0.DATAIN
+rstn => q~reg0.ACLR
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|modulo_display:modulo_display
+rolha_usada => And1.IN1
+gar_completa => gar_completa.IN1
+reset_duzias => reset_duzias.IN3
+reset_rolhas => reset_rolhas.IN3
+clk => clk.IN1
+OUT[0] <= MUX_4_1:mux_4_1_7seg.port5
+OUT[1] <= MUX_4_1:mux_4_1_7seg.port5
+OUT[2] <= MUX_4_1:mux_4_1_7seg.port5
+OUT[3] <= MUX_4_1:mux_4_1_7seg.port5
+OUT[4] <= MUX_4_1:mux_4_1_7seg.port5
+OUT[5] <= MUX_4_1:mux_4_1_7seg.port5
+OUT[6] <= MUX_4_1:mux_4_1_7seg.port5
+dig0 <= decod_2_4:decod_dig_7seg.port2
+dig1 <= decod_2_4:decod_dig_7seg.port3
+dig2 <= decod_2_4:decod_dig_7seg.port4
+dig3 <= decod_2_4:decod_dig_7seg.port5
+tem_rec <= tem_rec.DB_MAX_OUTPUT_PORT_TYPE
+rolha_menor_5 <= rolha_menor_5.DB_MAX_OUTPUT_PORT_TYPE
+r_zerada <= r_zerada.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|modulo_display:modulo_display|contador_3bit_padrao:recargas_disponiveis
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count[2]~reg0.CLK
+reset => count[0]~reg0.ACLR
+reset => count[1]~reg0.ACLR
+reset => count[2]~reg0.ACLR
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|modulo_display:modulo_display|contador_4bit_desc_lim5:cont_unidade_rolha
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count[2]~reg0.CLK
+clk => count[3]~reg0.CLK
+reset => count[0]~reg0.PRESET
+reset => count[1]~reg0.ACLR
+reset => count[2]~reg0.PRESET
+reset => count[3]~reg0.ACLR
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|modulo_display:modulo_display|contador_2bit_desc_lim2:cont_dezena_rolha
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+reset => count[0]~reg0.ACLR
+reset => count[1]~reg0.PRESET
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|modulo_display:modulo_display|decod_numeros_7seg_0a9:decod_unidade_r
+A => sA.IN0
+A => sA.IN0
+A => sE.IN0
+A => sF.IN0
+B => sA.IN1
+B => sA.IN1
+B => sD.IN0
+C => sB.IN1
+C => sC.IN1
+C => sF.IN1
+C => sA.IN1
+C => sA.IN1
+C => sD.IN1
+D => sA.IN1
+D => sB.IN1
+D => sD.IN1
+D => sD.IN1
+D => sE.IN1
+D => sF.IN1
+D => sF.IN1
+D => sA.IN1
+D => sB.IN1
+D => sC.IN1
+sA <= sA.DB_MAX_OUTPUT_PORT_TYPE
+sB <= sB.DB_MAX_OUTPUT_PORT_TYPE
+sC <= sC.DB_MAX_OUTPUT_PORT_TYPE
+sD <= sD.DB_MAX_OUTPUT_PORT_TYPE
+sE <= sE.DB_MAX_OUTPUT_PORT_TYPE
+sF <= sF.DB_MAX_OUTPUT_PORT_TYPE
+sG <= sG.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|modulo_display:modulo_display|decod_numeros_7seg_0a3:decod_dezena_r
+C => sC.IN0
+C => sE.IN0
+C => sA.IN0
+C => sD.IN0
+C => sG.IN0
+D => sA.IN1
+D => sD.IN1
+D => sE.IN1
+D => sC.IN1
+D => sG.IN1
+sA <= sA.DB_MAX_OUTPUT_PORT_TYPE
+sB <= <GND>
+sC <= sC.DB_MAX_OUTPUT_PORT_TYPE
+sD <= sD.DB_MAX_OUTPUT_PORT_TYPE
+sE <= sE.DB_MAX_OUTPUT_PORT_TYPE
+sF <= sF.DB_MAX_OUTPUT_PORT_TYPE
+sG <= sG.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|modulo_display:modulo_display|contador_4bit_asc_lim12:contador_duzia
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count[2]~reg0.CLK
+clk => count[3]~reg0.CLK
+reset => count[0]~reg0.ACLR
+reset => count[1]~reg0.ACLR
+reset => count[2]~reg0.ACLR
+reset => count[3]~reg0.ACLR
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|modulo_display:modulo_display|contador_4bit_asc_lim9:cont_unidade_gar
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count[2]~reg0.CLK
+clk => count[3]~reg0.CLK
+reset => count[0]~reg0.ACLR
+reset => count[1]~reg0.ACLR
+reset => count[2]~reg0.ACLR
+reset => count[3]~reg0.ACLR
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|modulo_display:modulo_display|contador_4bit_asc_lim9:cont_dezena_gar
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count[2]~reg0.CLK
+clk => count[3]~reg0.CLK
+reset => count[0]~reg0.ACLR
+reset => count[1]~reg0.ACLR
+reset => count[2]~reg0.ACLR
+reset => count[3]~reg0.ACLR
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|modulo_display:modulo_display|decod_numeros_7seg_0a9:decod_unidade_gar
+A => sA.IN0
+A => sA.IN0
+A => sE.IN0
+A => sF.IN0
+B => sA.IN1
+B => sA.IN1
+B => sD.IN0
+C => sB.IN1
+C => sC.IN1
+C => sF.IN1
+C => sA.IN1
+C => sA.IN1
+C => sD.IN1
+D => sA.IN1
+D => sB.IN1
+D => sD.IN1
+D => sD.IN1
+D => sE.IN1
+D => sF.IN1
+D => sF.IN1
+D => sA.IN1
+D => sB.IN1
+D => sC.IN1
+sA <= sA.DB_MAX_OUTPUT_PORT_TYPE
+sB <= sB.DB_MAX_OUTPUT_PORT_TYPE
+sC <= sC.DB_MAX_OUTPUT_PORT_TYPE
+sD <= sD.DB_MAX_OUTPUT_PORT_TYPE
+sE <= sE.DB_MAX_OUTPUT_PORT_TYPE
+sF <= sF.DB_MAX_OUTPUT_PORT_TYPE
+sG <= sG.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|modulo_display:modulo_display|decod_numeros_7seg_0a9:decod_dezena_gar
+A => sA.IN0
+A => sA.IN0
+A => sE.IN0
+A => sF.IN0
+B => sA.IN1
+B => sA.IN1
+B => sD.IN0
+C => sB.IN1
+C => sC.IN1
+C => sF.IN1
+C => sA.IN1
+C => sA.IN1
+C => sD.IN1
+D => sA.IN1
+D => sB.IN1
+D => sD.IN1
+D => sD.IN1
+D => sE.IN1
+D => sF.IN1
+D => sF.IN1
+D => sA.IN1
+D => sB.IN1
+D => sC.IN1
+sA <= sA.DB_MAX_OUTPUT_PORT_TYPE
+sB <= sB.DB_MAX_OUTPUT_PORT_TYPE
+sC <= sC.DB_MAX_OUTPUT_PORT_TYPE
+sD <= sD.DB_MAX_OUTPUT_PORT_TYPE
+sE <= sE.DB_MAX_OUTPUT_PORT_TYPE
+sF <= sF.DB_MAX_OUTPUT_PORT_TYPE
+sG <= sG.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|modulo_display:modulo_display|contador_2bit_asc:cont_dig_7seg
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+reset => count[0]~reg0.ACLR
+reset => count[1]~reg0.ACLR
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|modulo_display:modulo_display|decod_2_4:decod_dig_7seg
+A => out2.IN0
+A => out3.IN0
+A => out0.IN0
+A => out1.IN0
+B => out1.IN1
+B => out3.IN1
+B => out0.IN1
+B => out2.IN1
+out0 <= out0.DB_MAX_OUTPUT_PORT_TYPE
+out1 <= out1.DB_MAX_OUTPUT_PORT_TYPE
+out2 <= out2.DB_MAX_OUTPUT_PORT_TYPE
+out3 <= out3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|modulo_display:modulo_display|MUX_4_1:mux_4_1_7seg
+A[0] => Mux6.IN0
+A[1] => Mux5.IN0
+A[2] => Mux4.IN0
+A[3] => Mux3.IN0
+A[4] => Mux2.IN0
+A[5] => Mux1.IN0
+A[6] => Mux0.IN0
+B[0] => Mux6.IN1
+B[1] => Mux5.IN1
+B[2] => Mux4.IN1
+B[3] => Mux3.IN1
+B[4] => Mux2.IN1
+B[5] => Mux1.IN1
+B[6] => Mux0.IN1
+C[0] => Mux6.IN2
+C[1] => Mux5.IN2
+C[2] => Mux4.IN2
+C[3] => Mux3.IN2
+C[4] => Mux2.IN2
+C[5] => Mux1.IN2
+C[6] => Mux0.IN2
+D[0] => Mux6.IN3
+D[1] => Mux5.IN3
+D[2] => Mux4.IN3
+D[3] => Mux3.IN3
+D[4] => Mux2.IN3
+D[5] => Mux1.IN3
+D[6] => Mux0.IN3
+SEL[0] => Mux0.IN5
+SEL[0] => Mux1.IN5
+SEL[0] => Mux2.IN5
+SEL[0] => Mux3.IN5
+SEL[0] => Mux4.IN5
+SEL[0] => Mux5.IN5
+SEL[0] => Mux6.IN5
+SEL[1] => Mux0.IN4
+SEL[1] => Mux1.IN4
+SEL[1] => Mux2.IN4
+SEL[1] => Mux3.IN4
+SEL[1] => Mux4.IN4
+SEL[1] => Mux5.IN4
+SEL[1] => Mux6.IN4
+OUT[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+OUT[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+OUT[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+OUT[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+OUT[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|maq_esteira:comb_7
+clk => next_state~1.DATAIN
+clk => current_state~1.DATAIN
+reset => current_state~3.DATAIN
+ST => always1.IN0
+ST => M.IN0
+PG => always1.IN1
+M <= M.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|PBL3|maq_enc_veda:comb_8
+clk => current_state~1.DATAIN
+reset => current_state~3.DATAIN
+PG => always1.IN0
+PG => always1.IN0
+PG => always1.IN0
+PG => EV.IN0
+PG => Selector3.IN3
+PG => next_state.OUTPUTSELECT
+PG => next_state.OUTPUTSELECT
+PG => GC.IN0
+PG => next_state.OUTPUTSELECT
+PG => next_state.OUTPUTSELECT
+PG => Selector0.IN1
+CH => always1.IN1
+CH => always1.IN1
+RO => always1.IN1
+GC <= GC.DB_MAX_OUTPUT_PORT_TYPE
+EV <= EV.DB_MAX_OUTPUT_PORT_TYPE
+VE <= VE.DB_MAX_OUTPUT_PORT_TYPE
+tipo[0] <= tipo.DB_MAX_OUTPUT_PORT_TYPE
+tipo[1] <= next_state.DB_MAX_OUTPUT_PORT_TYPE
+tipo[2] <= <GND>
+
+
+|PBL3|maq_desp:comb_9
+clk => current_state~1.DATAIN
+reset => current_state~3.DATAIN
+RO => always1.IN0
+RC => always1.IN0
+RC => Selector1.IN1
+RC => always1.IN1
+RC => Selector2.IN1
+RD => always1.IN1
+RD => Selector1.IN2
+RD => Selector0.IN2
+Al <= Al.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+

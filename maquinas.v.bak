@@ -1,0 +1,15 @@
+module maquinas (
+    input clk,       // Sinal de clock
+    input reset,   // Sinal de reset ativo baixo
+    input PG, CH, RO, ST,
+    output GC,        // Saída Garrafa completa
+    output EV,        // Saída válvula de enchimento
+    output VE,         // Saída válvula de vedação
+	 output M,
+	 output [2:0] tipo
+);
+
+maq_esteira(clk, !ST , ST, PG, M);
+maq_enc_veda (clk, !ST , PG, CH, RO, GC, EV, VE, tipo);
+
+endmodule

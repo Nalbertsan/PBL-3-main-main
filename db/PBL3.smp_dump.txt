@@ -1,0 +1,23 @@
+
+State Machine - |PBL3|maq_desp:comb_9|current_state
+Name current_state.Desligado current_state.Alarme current_state.Ligado 
+current_state.Desligado 0 0 0 
+current_state.Ligado 1 0 1 
+current_state.Alarme 1 1 0 
+
+State Machine - |PBL3|maq_enc_veda:comb_8|current_state
+Name current_state.GARRAFA_CHEIA_VEDADA current_state.GARRAFA_CHEIA current_state.GARRAFA_VAZIA current_state.SEM_GARRAFA 
+current_state.SEM_GARRAFA 0 0 0 0 
+current_state.GARRAFA_VAZIA 0 0 1 1 
+current_state.GARRAFA_CHEIA 0 1 0 1 
+current_state.GARRAFA_CHEIA_VEDADA 1 0 0 1 
+
+State Machine - |PBL3|maq_esteira:comb_7|next_state
+Name next_state.MOVING 
+next_state.STOPPED 0 
+next_state.MOVING 1 
+
+State Machine - |PBL3|maq_esteira:comb_7|current_state
+Name current_state.MOVING 
+current_state.STOPPED 0 
+current_state.MOVING 1 
